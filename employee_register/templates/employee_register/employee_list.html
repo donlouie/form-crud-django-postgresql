@@ -2,7 +2,8 @@
 
 {% block content %}
 
-<table class="table table-borderless">
+<table class="table table-sm  table-borderless table-striped table-light text-center">
+	<caption>List of Employees</caption>
 	<thead class="border-bottom font-weight-bold">
 		<tr>
 			<td>Full Name</td>
@@ -13,12 +14,12 @@
 			<td>Telephone No.</td>
 			<td>Position</td>
 			<td>
-				<a href="{% url 'employee_insert' %}" class="btn btn-outline-success">
-					<i class="fas fa-plus"></i> Add New
+				<a href="{% url 'employee_insert' %}" class="btn btn-block btn-success">
+					<i class="fas fa-lg fa-plus"> Create</i>
 			  </a>
 		  </td>
 		</tr>
-		<tbody>
+		<tbody class="table-hover">
 			{% for employee in employee_list %}
 				<tr>
 					<td>{{employee.fullname}}</td>
@@ -30,12 +31,12 @@
 					<td>{{employee.position}}</td>
 					<td>
 						<!-- Edit -->
-						<a href="{% url 'employee_update' employee.id %}" class="btn text-secondary px-0"><i class="far fa-edit fa-lg"></i></a>
+						<a href="{% url 'employee_update' employee.id %}" class="btn bg-primary text-secondary px-0 col-sm-5"><i class="far fa-edit fa-lg text-light"></i></a>
 						<!-- Delete -->
 						<form action="{% url 'employee_delete' employee.id %}" method="post" class="d-inline">
 							{% csrf_token %}
-							<button type="submit" class="btn">
-								<i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+							<button type="submit" class="btn bg-danger col-sm-6">
+								<i class="far fa-trash-alt fa-lg text-danger text-light"></i>
 							</button>
 						</form>
 					</td>
