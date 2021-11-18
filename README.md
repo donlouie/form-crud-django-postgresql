@@ -7,7 +7,7 @@
 Django web application output that performs basic C R U D operations using PostgreSQL
 ### 🖼️ Image Preview
 
-[Imgur](https://i.imgur.com/rEy6yIL.png)
+![Imgur](https://i.imgur.com/rEy6yIL.png)
 
 ### 🏗️ Built With
 
