@@ -30,3 +30,32 @@ def employee_delete(request, id):
   employee = Employee.objects.get(pk=id)
   employee.delete()
   return redirect('/employee/list')
+
+# Pie Chart
+def pie_chart(request):
+    labels = []
+    data = []
+ 
+    queryset = Employee.objects.order_by('-fullname')[:5]
+    for employee in queryset:
+        labels.append(employee.fullname)
+        data.append(employee.fullname)
+ 
+    return render(request, "employee_register/pie_chart.html", {
+        'labels': labels,
+        'data': data,
+    })
+
+# def pie_chart(request):
+#     labels = []
+#     data = []
+ 
+#     queryset = Employee.objects.order_by('-econtact')[:5]
+#     for city in queryset:
+#         labels.append(city.ename)
+#         data.append(city.econtact)
+ 
+#     return render(request, 'pie_chart.html', {
+#         'labels': labels,
+#         'data': data,
+#     })
