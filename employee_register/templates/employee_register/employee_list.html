@@ -7,6 +7,7 @@
 	<thead class="border-bottom font-weight-bold">
 		<tr>
 			<td>Full Name</td>
+      <td>Gender</td>
 			<td>Address</td>
 			<td>EMP_Code</td>
 			<td>Email</td>
@@ -23,6 +24,7 @@
 			{% for employee in employee_list %}
 				<tr>
 					<td>{{employee.fullname}}</td>
+          <td>{{employee.gender}}</td>
 					<td>{{employee.address}}</td>
 					<td>{{employee.emp_code}}</td>
 					<td>{{employee.email}}</td>

@@ -36,10 +36,10 @@ def pie_chart(request):
     labels = []
     data = []
  
-    queryset = Employee.objects.order_by('-fullname')[:5]
+    queryset = Employee.objects.order_by('-emp_code')[:5]
     for employee in queryset:
         labels.append(employee.fullname)
-        data.append(employee.fullname)
+        data.append(employee.emp_code)
  
     return render(request, "employee_register/pie_chart.html", {
         'labels': labels,
